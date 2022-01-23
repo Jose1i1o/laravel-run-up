@@ -23,11 +23,3 @@ Route::get('/courses', [CoursesController::class, 'index']);
 Route::get('courses/create', [CoursesController::class, 'create']);
 
 Route::get('courses/{course}', [CoursesController::class, 'show']);
-
-// Route::get('courses/{course}/{category?}', function ($course, $category = null) { // Takes the url parameter
-//     if ($category) {
-//         return "Welcome to the $course from the $category category";
-//     } else {
-//         return "Welcome to the $course";
-//     }
-// });
