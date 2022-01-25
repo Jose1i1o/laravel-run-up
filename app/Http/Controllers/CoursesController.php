@@ -9,8 +9,7 @@ class CoursesController extends Controller
 {
     public function index()
     {
-        $courses = Course::all();
-
+        $courses = Course::paginate(); // paginate() is a method from the Illuminate\Support\Collection class.
         return view('courses.index', compact('courses'));
     }
 
@@ -19,8 +18,9 @@ class CoursesController extends Controller
         return view('courses.create');
     }
 
-    public function show($course)
+    public function show($id)
     {
+        $course = Course::find($id);
         // return view('courses.show', ['c' => $course]); // option A
         return view('courses.show', compact('course')); // option B. When the name is equal to its variable
     }
